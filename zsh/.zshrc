@@ -87,14 +87,5 @@ alias ranger="ranger-cd"
 alias ra="ranger"
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 
-ranger-cd() {
-    tempfile=$(mktemp /tmp/${tempfoo}.XXXXXX)
-    /home/jared/.linuxbrew/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}" < $TTY
-    test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-        cd -- "$(cat "$tempfile")"
-    fi
-    rm -f -- "$tempfile"
-}
-
 source $HOME/.aliases
+source $HOME/.funcs
