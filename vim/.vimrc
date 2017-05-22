@@ -3,7 +3,7 @@ noremap <UP>    <NOP>
 noremap <DOWN>  <NOP>
 noremap <LEFT>  <NOP>
 noremap <RIGHT> <NOP>
-inoremap jj <ESC>
+inoremap kj <ESC>
 
 set nocompatible        " ensure config is not used with Vi
 "set clipboard=unnamedplus
