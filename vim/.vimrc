@@ -31,7 +31,7 @@ set cursorcolumn        " highlights the cursor column
 "set colorcolumn =80     " colours the 80th column
 
 " displays whitespace as characters
-set list listchars=tab:│\ ,trail:·,nbsp:⎵
+" set list listchars=tab:│\ ,trail:·,nbsp:⎵
 
 "Config"
 set nomodeline          " disabled for security reasons
