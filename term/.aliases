@@ -14,11 +14,11 @@ GREEN='\033[0;32m'
 alias python=python3
 
 # C Project ls pretty
-alias lsp='echo -n "\n\t${WHITE}---- ${CYAN}HEADER FILES${WHITE} ----${YELLOW}\n " &&
+alias lsp='echo -n -e "\n\t${WHITE}---- ${CYAN}HEADER FILES${WHITE} ----${YELLOW}\n " &&
             ls *.h &&
-            echo -n "\n\t${WHITE}---- ${CYAN}BINARIES${WHITE} ----\n " &&
+            echo -n -e "\n\t${WHITE}---- ${CYAN}BINARIES${WHITE} ----\n " &&
             ls -I "*.*" &&
-            echo -n "\n\t${WHITE}---- ${CYAN}C FILES${WHITE} ----${L_BLUE}\n " &&
+            echo -n -e "\n\t${WHITE}---- ${CYAN}C FILES${WHITE} ----${L_BLUE}\n " &&
             ls *.c '
 
 alias ass="cd ~/git/comp1511/ass2"
