@@ -14,3 +14,6 @@ mkcd() {
     mkdir "$1"
     cd "$1"
 }
+
+# sshfs robot@192.168.1.45:/ ~/jokers -o nonempty
+# Make function that takes filename, if exists, mount, else, mkdir, mount
