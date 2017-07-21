@@ -26,10 +26,19 @@ mkcd() {
 # sshfs robot@192.168.1.45:/ ~/jokers -o nonempty
 # Make function that takes filename, if exists, mount, else, mkdir, mount
 mounty() {
-    echo "$1"
-    echo "$2"
-    if [ -f ~/.bashrc ]; then
-        echo "true"
+    
+    # User Input
+    echo -n "Enter SSH [ENTER]: "       
+    read ssh                            # SSH
+    echo -n "Enter DIR [ENTER]: "
+    read dir                            # Directory to mount to
+
+    # Checking for directory
+    if [ ! -d "$dir" ]; then            
+        echo "Created directory: $dir"
+        # mkdir "$dir"                   
     fi
+    echo "Maybe finish the function before running it?"
+    # sshfs "$ssh"/ "$dir" -o nonempty
 }
 
