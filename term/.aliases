@@ -33,3 +33,4 @@ alias lsp='echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${
 alias huh="git status"
 alias nvm="git reset HEAD"              
 alias kk="git add *"
+
