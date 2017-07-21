@@ -3,6 +3,7 @@ NC='\033[0m' # No Color
 WHITE='\033[0;37m'
 B_WHITE='\033[1;37m'
 PURPLE='\033[0;35m'
+LB_PURPLE='\033[1;95m'
 ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
 L_BLUE='\033[0;94m'
@@ -14,6 +15,7 @@ GREEN='\033[0;32m'
 L_GREEN='\033[0;92m'
 LB_GREEN='\033[1;92m'
 RED='\033[0;31m'
+LB_RED='\033[1;91m'
 
 #ALIASES
 #------------------
@@ -33,4 +35,3 @@ alias lsp='echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${
 alias huh="git status"
 alias nvm="git reset HEAD"              
 alias kk="git add *"
-

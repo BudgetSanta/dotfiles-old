@@ -1,3 +1,11 @@
+# Git Info
+function parse_git_dirty {
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo -e "${LB_RED} * "
+}
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ [\1]$(parse_git_dirty)/"
+}
+
 # Ranger exit into current Dir
 ranger-cd() {
     tempfile=$(mktemp /tmp/${tempfoo}.XXXXXX)
@@ -17,3 +25,11 @@ mkcd() {
 
 # sshfs robot@192.168.1.45:/ ~/jokers -o nonempty
 # Make function that takes filename, if exists, mount, else, mkdir, mount
+mounty() {
+    echo "$1"
+    echo "$2"
+    if [ -f ~/.bashrc ]; then
+        echo "true"
+    fi
+}
+
