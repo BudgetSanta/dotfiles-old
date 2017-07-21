@@ -5,5 +5,5 @@ ln -s .dotfiles/zsh/.zshrc ~/.zshrc
 ln -s .dotfiles/vim/.vimrc ~/.vimrc
 ln -s .dotfiles/term/.aliases ~/.aliases
 ln -s .dotfiles/term/.funcs ~/.funcs
-ln -s .dotfiles/ssh/config ~/.ssh/
+ln -s ~/.dotfiles/ssh/config ~/.ssh/config
 echo "Finished Linking"

@@ -1,7 +1,7 @@
 # Ranger exit into current Dir
 ranger-cd() {
     tempfile=$(mktemp /tmp/${tempfoo}.XXXXXX)
-    /home/jared/.linuxbrew/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}" < $TTY
+    /home/linuxbrew/.linuxbrew/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}" < $TTY
     test -f "$tempfile" &&
     if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
         cd -- "$(cat "$tempfile")"
