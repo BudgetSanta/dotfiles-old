@@ -9,7 +9,7 @@ set nocompatible        " ensure config is not used with Vi
 "set clipboard=unnamedplus
 
 "Colors"
-colorscheme default
+colorscheme evening 
 syntax enable           " enables syntax highlighting
 
 "Indentation"
@@ -28,7 +28,7 @@ set showmatch           " highlights matching brackets
 set showcmd             " display incomplete commands
 set cursorline          " highlights the cursor line
 set cursorcolumn        " highlights the cursor column
-"set colorcolumn =80     " colours the 80th column
+set colorcolumn =80     " colours the 80th column
 
 " displays whitespace as characters
 " set list listchars=tab:│\ ,trail:·,nbsp:⎵
