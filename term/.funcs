@@ -23,6 +23,13 @@ mkcd() {
     cd "$1"
 }
 
+# Change Dir and list file
+cdl() {
+    cd "$1"
+    ls
+}
+
+
 # sshfs robot@192.168.1.45:/ ~/jokers -o nonempty
 # Make function that takes filename, if exists, mount, else, mkdir, mount
 mounty() {
