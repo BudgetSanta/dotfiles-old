@@ -9,7 +9,7 @@ set nocompatible        " ensure config is not used with Vi
 "set clipboard=unnamedplus
 
 "Colors"
-colorscheme default
+colorscheme evening
 syntax enable           " enables syntax highlighting
 
 "Indentation"
