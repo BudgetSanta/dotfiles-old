@@ -32,6 +32,12 @@ alias lsp='echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${
             ls -I "*.*" &&
             echo ""'
 
+#Git
 alias huh="git status"
 alias nvm="git reset HEAD"              
 alias kk="git add *"
+
+#CSE
+alias cs1521="cd ~/git/comp1521"
+alias cs1531="cd ~/git/comp1531"
+alias cs2521="cd ~/git/comp2521"
