@@ -32,16 +32,22 @@ cdl() {
 # Comp class directory
 # Usage: cs CLASS_CODE [WEEK]
 cs() {
-    cd ~/git/comp"$1"/
 
-    # If week given
-    if [ "$#" -eq "2" ]
-        then
-            cd week"$2"/lab/
-            lsp
-    else
-        ls
+    if [ -d ~/git/comp"$1" ]; then
+        cd ~/git/comp"$1"/
+            
+        # If week given
+        if [ "$#" -eq "2" ]
+            then
+                cd week"$2"/lab/
+                lsp
+        else
+            ls
+        fi
+    else # Doesn't exist
+        printf "Class \"$1\" doesn't exist.\n"
     fi
+
 }
 
 
