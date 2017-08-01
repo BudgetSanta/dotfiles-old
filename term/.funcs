@@ -37,10 +37,13 @@ cs() {
         cd ~/git/comp"$1"/
             
         # If week given
-        if [ "$#" -eq "2" ]
-            then
+        if [ "$#" -eq "2" ]; then 
+            if [ -d week"$2"/lab ]; then
                 cd week"$2"/lab/
                 lsp
+            else
+                printf "Week \"$2\" doesn't exist.\n"
+            fi
         else
             ls
         fi
