@@ -29,6 +29,21 @@ cdl() {
     ls
 }
 
+# Comp class directory
+# Usage: cs CLASS_CODE [WEEK]
+cs() {
+    cd ~/git/comp"$1"/
+
+    # If week given
+    if [ "$#" -eq "2" ]
+        then
+            cd week"$2"/lab/
+            lsp
+    else
+        ls
+    fi
+}
+
 
 # sshfs robot@192.168.1.45:/ ~/jokers -o nonempty
 # Make function that takes filename, if exists, mount, else, mkdir, mount

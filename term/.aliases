@@ -28,7 +28,7 @@ alias lsp='echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${
             ls *.h &&
             echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}C FILES${B_WHITE} ----${ORANGE}\n" &&
             ls *.c &&
-            echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}BINARIES${B_WHITE} ----\n ${LB_GREEN}" &&
+            echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}BINARIES${B_WHITE} ----\n${LB_GREEN}" &&
             ls -I "*.*" &&
             echo ""'
 
@@ -36,8 +36,3 @@ alias lsp='echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${
 alias huh="git status"
 alias nvm="git reset HEAD"              
 alias kk="git add *"
-
-#CSE
-alias cs1521="cd ~/git/comp1521"
-alias cs1531="cd ~/git/comp1531"
-alias cs2521="cd ~/git/comp2521"
