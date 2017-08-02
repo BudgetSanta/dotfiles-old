@@ -6,7 +6,7 @@ noremap <RIGHT> <NOP>
 inoremap kj <ESC>
 
 set nocompatible        " ensure config is not used with Vi
-"set clipboard=unnamedplus
+set clipboard=unnamed
 
 "Colors"
 colorscheme default 
