@@ -37,7 +37,8 @@ cs() {
         cd ~/git/comp"$1"/
             
         # If week given
-        if [ "$#" -eq "2" ]; then 
+        if [ "$#" -eq "2" ]; then
+        # If week given if [ "$#" -eq "2" ]; then 
             if [ -d week"$2"/lab ]; then
                 cd week"$2"/lab/
                 lsp
