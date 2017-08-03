@@ -51,9 +51,10 @@ cs() {
     else # Doesn't exist
         printf "Class \"$1\" doesn't exist.\n"
     fi
-
 }
 
+#TODO Update LSP to be variable based on files
+#   based on if .py/.c/else show certain files
 
 # sshfs robot@192.168.1.45:/ ~/jokers -o nonempty
 # Make function that takes filename, if exists, mount, else, mkdir, mount
