@@ -22,7 +22,7 @@ filetype indent on      " loads filetype specific indentation settings
 
 "UI config"
 set number              " enables linenumbers
-set relativenumber      " enables relative linenumbers
+"set relativenumber      " enables relative linenumbers
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlights matching brackets
 set showcmd             " display incomplete commands
