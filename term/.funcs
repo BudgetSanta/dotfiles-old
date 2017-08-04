@@ -55,6 +55,28 @@ cs() {
 
 #TODO Update LSP to be variable based on files
 #   based on if .py/.c/else show certain files
+lsl () {
+    
+    # Displays if .h files
+    chCount="$(find *.h 2> /dev/null | wc -l)"
+    if [ "${chCount}" != 0 ]; then
+        echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${ORANGE}\n"
+        ls *.h
+    fi
+    # Displays if .c files
+    ccCount="$(find *.c 2> /dev/null | wc -l)"
+    if [ "${cCount}" != 0 ]; then
+        echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}C FILES${B_WHITE} ----${ORANGE}\n"
+        ls *.c
+    fi
+
+    # Displays if != *.* files
+    ccCount="$(find 2> /dev/null | wc -l)"
+    if [ "${cCount}" != 0 ]; then
+        echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${ORANGE}\n"
+        ls *.c
+    fi
+}
 
 # sshfs robot@192.168.1.45:/ ~/jokers -o nonempty
 # Make function that takes filename, if exists, mount, else, mkdir, mount
