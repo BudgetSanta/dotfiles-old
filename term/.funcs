@@ -50,6 +50,9 @@ cs() {
                     1531) 
                         cd survey-system-h17a-pissedachios
                         lsl;;
+                    #CLASS_CODE)
+                    #   cd ASSIGNMENT_FOLDER
+                    #   lsl;;
                     *) echo "NO SELECTION IN CASE";;
                 esac
 
