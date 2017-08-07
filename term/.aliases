@@ -23,15 +23,6 @@ LB_RED='\033[1;91m'
 alias python=python3
 alias py=python3    
 
-# C Project ls pretty
-alias lsp='echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${ORANGE}\n" &&
-            ls *.h &&
-            echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}C FILES${B_WHITE} ----${ORANGE}\n" &&
-            ls *.c &&
-            echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}BINARIES${B_WHITE} ----\n${LB_GREEN}" &&
-            ls -I "*.*" &&
-            echo ""'
-
 #Git
 alias huh="git status"
 alias nvm="git reset HEAD"              
