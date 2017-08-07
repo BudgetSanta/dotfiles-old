@@ -90,6 +90,9 @@ lsl () {
     lsl_file o "C: OUTPUT FILES"
     lsl_file c "C: C FILES"
 
+    # Shell Scripts
+    lsl_file sh "SHELL SCRIPTS"
+
     # No Extensions
     lsl_file "*" "NO EXTENSION"
 
@@ -101,7 +104,12 @@ lsl_file() {
     EXT_NAME="$2"               # Readble file heading
 
     if [ "${EXT}" == "*" ]; then    # If no extension
-        fileCount="$(find . ! -name \"*.${EXT}\" 2> /dev/null | wc -l)"
+        files=$(ls -1I "*.*")
+        fileCount=$(echo ${files} | wc -l)
+        filesCharCount=$(echo ${files} | wc -m)
+        if [ "${filesCharCount}" -eq "1" ]; then # if there are no non-extensions it resets
+            fileCount="0"
+        fi
     else                            # If normal
         fileCount="$(find *.${EXT} 2> /dev/null | wc -l)"
     fi     
@@ -110,7 +118,6 @@ lsl_file() {
     if [ "${fileCount}" -ne "0" ]; then
         printf "\t${B_WHITE}---- ${B_CYAN}%s${B_WHITE} ----${ORANGE}\n" "${EXT_NAME}"
 
-        echo "${fileCount}"
         if [ "${EXT}" == "*" ]; then    # If no extension
             ls -I *.${EXT}
         else                            # If normal
