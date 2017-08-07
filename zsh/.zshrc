@@ -89,3 +89,8 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 
 source $HOME/.aliases
 source $HOME/.funcs
+
+# Ignores error message when nothing found
+# i.e. lsl function won't complain when 
+# a specific file extension isn't found
+setopt +o nomatch

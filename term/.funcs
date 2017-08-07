@@ -1,3 +1,4 @@
+#!/bin/bash
 # Git Info
 function parse_git_dirty_me {
     [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo -e "${LB_RED} * "
@@ -36,15 +37,27 @@ cs() {
     if [ -d ~/git/comp"$1" ]; then
         cd ~/git/comp"$1"/
             
-        # If week given
+        # If week/ass given
         if [ "$#" -eq "2" ]; then
-        # If week given if [ "$#" -eq "2" ]; then 
-            if [ -d week"$2"/lab ]; then
+
+            # If week given 
+            if [ -d week"$2"/lab ]; then    # CDs INTO WEEK
                 cd week"$2"/lab/
-                lsp
-            else
+                lsl
+            # If ass give
+            elif [ "$2" = "ass" ]; then    # CDs INTO ASSIGNMENT
+                case "$1" in
+                    1531) 
+                        cd survey-system-h17a-pissedachios
+                        lsl;;
+                    *) echo "NO SELECTION IN CASE";;
+                esac
+
+            else                            # Week not found
                 printf "Week \"$2\" doesn't exist.\n"
             fi
+
+        # No week/ass given
         else
             ls
         fi
@@ -56,25 +69,49 @@ cs() {
 #TODO Update LSP to be variable based on files
 #   based on if .py/.c/else show certain files
 lsl () {
-    
-    # Displays if .h files
-    chCount="$(find *.h 2> /dev/null | wc -l)"
-    if [ "${chCount}" != 0 ]; then
-        echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${ORANGE}\n"
-        ls *.h
-    fi
-    # Displays if .c files
-    ccCount="$(find *.c 2> /dev/null | wc -l)"
-    if [ "${cCount}" != 0 ]; then
-        echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}C FILES${B_WHITE} ----${ORANGE}\n"
-        ls *.c
-    fi
 
-    # Displays if != *.* files
-    ccCount="$(find 2> /dev/null | wc -l)"
-    if [ "${cCount}" != 0 ]; then
-        echo -n -e "\n\t${B_WHITE}---- ${B_CYAN}HEADER FILES${B_WHITE} ----${ORANGE}\n"
-        ls *.c
+    #TODO Get calls to lsl_file happening from a hash table
+    
+    # NOTE: Add under heading in [lsl_file FILE_TYPE "READABLE_NAME"
+
+    # Text Files
+    lsl_file txt "TEXT FILES"
+    lsl_file csv "CSV FILES"
+    lsl_file md "MARKDOWN FILES"
+
+    # Python
+    lsl_file py "PY: PYTHON FILES"
+
+    # C Files
+    lsl_file h "C: HEADER FILES"
+    lsl_file o "C: OUTPUT FILES"
+    lsl_file c "C: C FILES"
+
+    # No Extensions
+    lsl_file "*" "NO EXTENSION"
+
+}
+
+# Function for lsl that takes EXT and EXT_NAME for few lines of code
+lsl_file() {
+    EXT="$1"                    # File Extension
+    EXT_NAME="$2"               # Readble file heading
+
+    if [ "${EXT}" == "*" ]; then    # If no extension
+        fileCount="$(find ! -name \"*.${EXT}\" 2> /dev/null | wc -l)"
+    else                            # If normal
+        fileCount="$(find *.${EXT} 2> /dev/null | wc -l)"
+    fi     
+
+    # Print out if count != 0
+    if [ "${fileCount}" -ne "0" ]; then
+        printf "\t${B_WHITE}---- ${B_CYAN}%s${B_WHITE} ----${ORANGE}\n" "${EXT_NAME}"
+
+        if [ "${EXT}" == "*" ]; then    # If no extension
+            ls -I *.${EXT}
+        else                            # If normal
+            ls *.${EXT}
+        fi 
     fi
 }
 
