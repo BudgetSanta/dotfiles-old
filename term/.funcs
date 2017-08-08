@@ -81,6 +81,7 @@ lsl () {
     lsl_file txt "TEXT FILES"
     lsl_file csv "CSV FILES"
     lsl_file md "MARKDOWN FILES"
+    lsl_file db "DATABASE FILES"
 
     # Python
     lsl_file py "PY: PYTHON FILES"
