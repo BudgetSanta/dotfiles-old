@@ -77,6 +77,7 @@ lsl () {
     
     # NOTE: Add under heading in [lsl_file FILE_TYPE "READABLE_NAME"
 
+    printf "\n"
     # Text Files
     lsl_file txt "TEXT FILES"
     lsl_file csv "CSV FILES"
@@ -97,6 +98,7 @@ lsl () {
     # No Extensions
     lsl_file "*" "NO EXTENSION"
 
+    printf "\n"
 }
 
 # Function for lsl that takes EXT and EXT_NAME for few lines of code
@@ -120,7 +122,7 @@ lsl_file() {
         printf "\t${B_WHITE}---- ${B_CYAN}%s${B_WHITE} ----${ORANGE}\n" "${EXT_NAME}"
 
         if [ "${EXT}" == "*" ]; then    # If no extension
-            ls -I *.${EXT}
+            ls -I "*.${EXT}"
         else                            # If normal
             ls *.${EXT}
         fi 
