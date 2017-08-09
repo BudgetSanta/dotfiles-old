@@ -18,6 +18,9 @@ cs() {
                     1531) 
                         cd survey-system-h17a-pissedachios
                         lsl;;
+                    2521)
+                        cd Generic_Iterator_ADT-2521-17s2
+                        lsl;;
                     #CLASS_CODE)
                     #   cd ASSIGNMENT_FOLDER
                     #   lsl;;
