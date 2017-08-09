@@ -30,6 +30,9 @@ cdl() {
     ls
 }
 
+# LSL Func
+source $HOME/.dotfiles/term/funcs/lsl
+
 # Comp class directory
 # Usage: cs CLASS_CODE [WEEK]
 cs() {
@@ -69,65 +72,7 @@ cs() {
     fi
 }
 
-#TODO Update LSP to be variable based on files
-#   based on if .py/.c/else show certain files
-lsl () {
 
-    #TODO Get calls to lsl_file happening from a hash table
-    
-    # NOTE: Add under heading in [lsl_file FILE_TYPE "READABLE_NAME"
-
-    printf "\n"
-    # Text Files
-    lsl_file txt "TEXT FILES"
-    lsl_file csv "CSV FILES"
-    lsl_file md "MARKDOWN FILES"
-    lsl_file db "DATABASE FILES"
-
-    # Python
-    lsl_file py "PY: PYTHON FILES"
-
-    # C Files
-    lsl_file h "C: HEADER FILES"
-    lsl_file o "C: OUTPUT FILES"
-    lsl_file c "C: C FILES"
-
-    # Shell Scripts
-    lsl_file sh "SHELL SCRIPTS"
-
-    # No Extensions
-    lsl_file "*" "NO EXTENSION"
-
-    printf "\n"
-}
-
-# Function for lsl that takes EXT and EXT_NAME for few lines of code
-lsl_file() {
-    EXT="$1"                    # File Extension
-    EXT_NAME="$2"               # Readble file heading
-
-    if [ "${EXT}" == "*" ]; then    # If no extension
-        files=$(ls -1I "*.*")
-        fileCount=$(echo ${files} | wc -l)
-        filesCharCount=$(echo ${files} | wc -m)
-        if [ "${filesCharCount}" -eq "1" ]; then # if there are no non-extensions it resets
-            fileCount="0"
-        fi
-    else                            # If normal
-        fileCount="$(find *.${EXT} 2> /dev/null | wc -l)"
-    fi     
-
-    # Print out if count != 0
-    if [ "${fileCount}" -ne "0" ]; then
-        printf "\t${B_WHITE}---- ${B_CYAN}%s${B_WHITE} ----${ORANGE}\n" "${EXT_NAME}"
-
-        if [ "${EXT}" == "*" ]; then    # If no extension
-            ls -I "*.${EXT}"
-        else                            # If normal
-            ls *.${EXT}
-        fi 
-    fi
-}
 
 # sshfs robot@192.168.1.45:/ ~/jokers -o nonempty
 # Make function that takes filename, if exists, mount, else, mkdir, mount
