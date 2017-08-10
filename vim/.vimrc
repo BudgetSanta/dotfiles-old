@@ -9,7 +9,8 @@ set nocompatible        " ensure config is not used with Vi
 set clipboard=unnamed
 
 "Colors"
-colorscheme default 
+set background=dark
+colorscheme solarized
 syntax enable           " enables syntax highlighting
 
 "Indentation"
@@ -50,3 +51,8 @@ noremap <silent><c-l> :nohlsearch<cr>
             \:diffupdate<cr>
             \:syntax sync fromstart<cr>
             \<c-l>
+
+execute pathogen#infect()
+
+" Nerd Tree Map
+map <C-n> :NERDTreeToggle<CR>
