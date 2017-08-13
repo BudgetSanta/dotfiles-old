@@ -2,7 +2,11 @@
 # Usage: cs CLASS_CODE [WEEK]
 cs() {
 
-    if [ -d ~/git/comp"$1" ]; then
+    # Just goes to root of gits
+    if [ "$#" -eq "0" ]; then
+        cd ~/git/
+        ls
+    elif [ -d ~/git/comp"$1" ]; then
         cd ~/git/comp"$1"/
             
         # If week/ass given
