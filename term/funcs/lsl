@@ -21,6 +21,9 @@ lsl () {
     lsl_file o "C: OUTPUT FILES"
     lsl_file c "C: C FILES"
 
+    # Assembly Files
+    lsl_file s "ASSEMBLY FILES"
+
     # Shell Scripts
     lsl_file sh "SHELL SCRIPTS"
 
