@@ -19,6 +19,7 @@ LB_RED='\033[1;91m'
 
 #ALIASES
 # Using the better python
+alias bp=bpython
 alias python=python3
 alias py=python3    
 
@@ -26,8 +27,8 @@ alias py=python3
 alias dot="cd ~/.dotfiles"
 alias funcs="cd ~/.dotfiles/term/funcs"
 
+
 #Git
-alias s="git status -sb"
-alias huh="git status"
+alias huh="git status -sb"
 alias nvm="git reset HEAD"              
 alias kk="git add *"
