@@ -85,7 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ranger="ranger-cd"
 alias ra="ranger"
-export PATH="$HOME/.linuxbrew/bin:$PATH"
 
 source $HOME/.aliases
 source $HOME/.funcs
@@ -94,3 +93,6 @@ source $HOME/.funcs
 # i.e. lsl function won't complain when 
 # a specific file extension isn't found
 setopt +o nomatch
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
