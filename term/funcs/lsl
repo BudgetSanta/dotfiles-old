@@ -13,6 +13,9 @@ lsl () {
     lsl_file md "MARKDOWN FILES"
     lsl_file db "DATABASE FILES"
     lsl_file log "LOG FILES"
+    
+    # Web Files
+    lsl_file html "HTML FILES"
 
     # Python
     lsl_file py "PY: PYTHON FILES"
