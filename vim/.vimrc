@@ -9,8 +9,10 @@ set nocompatible        " ensure config is not used with Vi
 set clipboard=unnamed
 
 "Colors"
-colorscheme default 
+set t_Co=256            " Goes before colorscheme
+colorscheme default
 syntax enable           " enables syntax highlighting
+
 
 "Indentation"
 set expandtab           " tabs expand to spaces
@@ -34,7 +36,7 @@ set colorcolumn =80     " colours the 80th column
 " set list listchars=tab:│\ ,trail:·,nbsp:⎵
 
 "Config"
-set nomodeline          " disabled for security reasons
+set nomodeline          " disabled for security reasons     
 set autochdir           " sets the working directory to the current file
 set virtualedit =block  " allows blockwise selections
 "set textwidth   =79     " sets the textwidth formatting to 79 characters (PEP 8)
