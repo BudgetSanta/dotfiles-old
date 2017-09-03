@@ -2,7 +2,7 @@
 msg() {
     email="steiner.jared1996@gmail.com"
     if [ $# -lt 2 ]; then
-        printf"Usage: msg \"SUB JECT\" \"MESS AGE\""
+        printf "Usage: msg \"SUBJECT\" \"MESSAGE\" [-a FILE_TO_ATTACH]\n"
     fi
 
     echo $2 > tmpMsg.txt
