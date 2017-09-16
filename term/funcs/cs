@@ -15,19 +15,19 @@ cs() {
             # If week given 
             if [ -d week"$2"/lab ]; then    # CDs INTO WEEK
                 cd week"$2"/lab/
-                lsl
+                ls
             # If ass give
             elif [ "$2" = "ass" ]; then    # CDs INTO ASSIGNMENT
                 case "$1" in
                     1531) 
                         cd survey-system-h17a-pissedachios
-                        lsl;;
+                        ls;;
                     2521)
                         cd Simple_Search_Engine-2521-17s2
-                        lsl;;
+                        ls;;
                     1521)
                         cd MIPS_Game_of_Life-1521-17s2
-                        lsl;;
+                        ls;;
                     #CLASS_CODE)
                     #   cd ASSIGNMENT_FOLDER
                     #   lsl;;
