@@ -53,7 +53,7 @@ noremap <silent><c-l> :nohlsearch<cr>
             \:syntax sync fromstart<cr>
             \<c-l>
 
-"execute pathogen#infect()
+execute pathogen#infect()
 
 " Nerd Tree Map
-"map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
