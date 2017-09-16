@@ -23,7 +23,7 @@ cs() {
                         cd survey-system-h17a-pissedachios
                         lsl;;
                     2521)
-                        cd Generic_Iterator_ADT-2521-17s2
+                        cd Simple_Search_Engine-2521-17s2
                         lsl;;
                     1521)
                         cd MIPS_Game_of_Life-1521-17s2

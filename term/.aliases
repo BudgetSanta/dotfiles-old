@@ -35,6 +35,7 @@ alias ga="git add"
 alias gc="git commit"
 alias gd="git diff"
 alias grm="git rm"
+alias glog="git log --pretty=oneline"
 alias huh="git status -sb"
 alias nvm="git reset HEAD"              
 
