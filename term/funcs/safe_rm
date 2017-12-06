@@ -1,0 +1,5 @@
+alias delete='/bin/rm'
+alias emptytrash='delete -r ~/.trash/*'
+rm() {
+    mv "$1" ~/.trash
+}
