@@ -1,5 +1,19 @@
-alias delete='/bin/rm'
-alias emptytrash='delete -r ~/.trash/*'
+#! /bin/bash
+
+alias destroy='/bin/rm'
+
 rm() {
-    mv "$1" ~/.trash
+    mkdir -p ~/.trash/
+    mv "$1" ~/.trash/
 }
+
+emptytrash() {
+    echo -n "Really empty Trash? DESTRUCTIVE [y/N] " && read answer
+    if [[ $answer == y* ]] || [[ $answer == Y* ]] ; then
+        destroy -rf ~/.trash/* && echo "Emptied Trash!"
+    else 
+        echo "Not emptying trash"
+    fi
+}
+
+
