@@ -11,6 +11,4 @@ Host cse
 
 Host *
     AddKeysToAgent yes
-    UseKeychain yes
     IdentityFile ~/.ssh/id_rsa
-    #IdentityFile ~/.ssh/rpi_id_rsa
