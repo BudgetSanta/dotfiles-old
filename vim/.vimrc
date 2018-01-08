@@ -8,6 +8,8 @@ inoremap kj <ESC>
 set nocompatible        " ensure config is not used with Vi
 set clipboard=unnamed
 
+set backspace=2 " make backspace work like most other programs
+
 "Colors"
 set t_Co=256            " Goes before colorscheme
 colorscheme default

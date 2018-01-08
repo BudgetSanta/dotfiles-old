@@ -1,0 +1,5 @@
+# Make dir and change to it
+mkwk() {
+    mkdir -p "week$1/lab/" && cd "week$1/lab/"
+}
+
