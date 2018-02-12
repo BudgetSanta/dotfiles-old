@@ -3,8 +3,22 @@
 alias destroy='/bin/rm'
 
 rm() {
-    mkdir -p ~/.trash/
-    mv "$1" ~/.trash/
+    if [[ $# -eq 0 ]] || [[ $1 == -* ]]; then
+        echo "safe_rm usage: rm FILES (No Args!)"
+    else
+        #Add a little loop for 'rm file1 file2 file3'
+        mkdir -p ~/.trash/
+        if [[ "$1" == "." ]]; then
+            num=$(mv -v * ~/.trash | wc -l)
+        elif [[ $1 == * ]]; then
+            num=$(yes | mv -v * ~/.trash | wc -l)
+        else
+            num=$(mv -v $1 ~/.trash/ | wc -l)
+        fi
+        echo "$num File(s) moved to ~/.trash"
+        echo "Use 'destroy' to actually delete"
+        echo "Use 'emptytrash' to empty trash files"
+    fi
 }
 
 emptytrash() {
