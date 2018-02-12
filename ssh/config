@@ -8,7 +8,3 @@ Host cse
     Compression yes
     CompressionLevel 4
     Ciphers arcfour128,blowfish-cbc
-
-Host *
-    AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_rsa
