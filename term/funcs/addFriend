@@ -1,0 +1,8 @@
+# Usage
+addFriend() {
+    if [ "$#" -lt "2" ]; then
+        echo "USAGE: addFriend \"username\" \"friendly name\""
+    else 
+        echo name = "$1", "$2" >> ~/.friends
+    fi
+}
