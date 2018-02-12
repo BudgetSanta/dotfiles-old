@@ -1,9 +1,14 @@
 Host cse
 	User z5153405
-	HostName wagner.cse.unsw.edu.au
+	HostName wagner.cse.unsw.edu.au 
     ForwardX11Trusted yes
     ForwardAgent yes
     ForwardX11 yes
+    XAuthLocation /opt/X11/bin/xauth
     Compression yes
     CompressionLevel 4
     Ciphers arcfour128,blowfish-cbc
+
+Host *
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa
