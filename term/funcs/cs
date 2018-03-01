@@ -20,18 +20,12 @@ cs() {
             # If ass give
             elif [ "$2" = "ass" ]; then    # CDs INTO ASSIGNMENT
                 case "$1" in
-                    1531) 
-                        cd survey-system-h17a-pissedachios
-                        ls;;
-                    2521)
-                        cd Simple_Search_Engine-2521-17s2
-                        ls;;
-                    1521)
-                        cd MIPS_Game_of_Life-1521-17s2
-                        ls;;
                     #CLASS_CODE)
                     #   cd ASSIGNMENT_FOLDER
-                    #   lsl;;
+                    #   ls;;
+                    3231) 
+                        cd Warm_Up_Ass-3231-18s1
+                        ls;;
                     *) echo "Assignment NOT specified for class COMP$1";;
                 esac
 
