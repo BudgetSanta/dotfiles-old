@@ -42,3 +42,4 @@ alias nvm="git reset HEAD"
 #Other
 alias fucking="sudo"
 alias yo="ping 8.8.8.8"
+alias journal="cd ~/timeline"

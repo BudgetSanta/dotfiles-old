@@ -31,6 +31,10 @@ cs() {
 
             else                            # Week not found
                 printf "Week \"$2\" doesn't exist.\n"
+                printf "Create 'week$2' folder? [y/N] " && read answer
+                if [[ $answer == y* ]] || [[ $answer == Y* ]] ; then
+                    mkcd "week$2/lab"
+                fi
             fi
 
         # No week/ass given
@@ -40,4 +44,8 @@ cs() {
     else # Doesn't exist
         printf "Class \"$1\" doesn't exist.\n"
     fi
+}
+
+classes() {
+    cd ~/git && cat classes
 }
