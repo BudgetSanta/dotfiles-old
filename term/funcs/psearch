@@ -3,7 +3,7 @@
 psearch() {
 
     result=${PWD##*/}               # to assign to a variable
-    echo "Searching ${PWD##*/} for \"$1\"...." # to print to stdout
+    echo "Searching ${result} for \"$1\"...." # to print to stdout
     grep -rn "$1" .
 
 }
