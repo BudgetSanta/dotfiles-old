@@ -6,4 +6,5 @@ if [[ -n $SSH_TTY ]];then
     tmux source-file ~/.dotfiles/tmux/$THEME.remote.conf
 else
     tmux source-file ~/.dotfiles/tmux/$THEME.conf
+    tmux source-file ~/.dotfiles/tmux/prefix_off.conf
 fi
