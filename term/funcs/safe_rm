@@ -2,7 +2,7 @@
 
 alias destroy='/bin/rm'
 
-rm() {
+safe_rm() {
     if [[ $# -eq 0 ]] || [[ $1 == -* ]]; then
         echo "safe_rm usage: rm FILES (No Args!)"
     else
