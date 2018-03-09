@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ -n $SSH_TTY ]];then
+    echo "SSH!!" > result
+else
+    echo "NOT SSH :(" > result
+fi
