@@ -1,12 +1,15 @@
 #!/bin/bash
 
 openBS() {
-    mkdir ~/bomb-shelter
-    s3fs -o allow_other,uid=$UID,umask=22 bomb-shelter $HOME/bomb-shelter && echo "bomb-shelter at ~/bombshelter"
+    echo "s3fs creates too many requests for the free tier usage.\nNOTHING DONE"
+    #mkdir ~/bomb-shelter
+    #s3fs -o allow_other,uid=$UID,umask=22 bomb-shelter $HOME/bomb-shelter
+    #echo bomb-shelter at ~/bomb-shelter
 }
 
 closeBS() {
-    HOSTNAME=hostname
-    sudo umount $HOME/bomb-shelter && echo "disconnected bomb-shelter from $HOSTNAME"
-    rm -r $HOME/bomb-shelter
+    echo "See openBS. Nothing opened, nothing closed"
+    #HOSTNAME=hostname
+    #sudo umount $HOME/bomb-shelter && "disconnected bomb-shelter from $HOSTNAME"
+    #rm -r $HOME/bomb-shelter
 }
