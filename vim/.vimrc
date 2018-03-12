@@ -26,11 +26,11 @@ filetype indent on      " loads filetype specific indentation settings
 
 "UI config"
 set number              " enables linenumbers
-"set relativenumber      " enables relative linenumbers
+set relativenumber      " enables relative linenumbers
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlights matching brackets
 set showcmd             " display incomplete commands
-"set cursorline          " highlights the cursor line
+set cursorline          " highlights the cursor line
 "set cursorcolumn        " highlights the cursor column
 "set colorcolumn =80     " colours the 80th column
 
@@ -57,3 +57,14 @@ noremap <silent><c-l> :nohlsearch<cr>
 
 " Nerd Tree Map
 map <C-n> :NERDTreeToggle<CR>
+
+" CTags
+set tags=tags;/
+
+execute pathogen#infect()
+
+" AIRLINE
+let g:airline_theme='deus'
+
+
+

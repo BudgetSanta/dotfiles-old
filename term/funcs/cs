@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Comp class directory
 # Usage: cs CLASS_CODE [WEEK]
 cs() {
