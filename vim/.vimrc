@@ -1,9 +1,9 @@
-" disables arrow keys
-noremap <UP>    <NOP>
+" disables arrow keys 
+noremap <UP>    <NOP> 
 noremap <DOWN>  <NOP>
 noremap <LEFT>  <NOP>
-noremap <RIGHT> <NOP>
-inoremap kj <ESC>
+noremap <RIGHT> <NOP> 
+inoremap kj <ESC> 
 
 set nocompatible        " ensure config is not used with Vi
 set clipboard=unnamed
