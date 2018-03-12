@@ -2,7 +2,7 @@
 
 alias destroy='/bin/rm'
 
-safe_rm() {
+rmSAFE() {  # FIX
     if [[ $# -eq 0 ]] || [[ $1 == -* ]]; then
         echo "safe_rm usage: rm FILES (No Args!)"
     else
@@ -10,7 +10,7 @@ safe_rm() {
         mkdir -p ~/.trash/
         if [[ "$1" == "." ]]; then
             num=$(mv -v * ~/.trash | wc -l)
-        elif [[ $1 == * ]]; then
+        elif [[ "$1" == "*" ]]; then
             num=$(yes | mv -v * ~/.trash | wc -l)
         else
             num=$(mv -v $1 ~/.trash/ | wc -l)
