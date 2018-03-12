@@ -1,0 +1,5 @@
+#!/bin/bash
+
+inOS() {
+    echo $PATH | grep "3231" | wc -l
+}
