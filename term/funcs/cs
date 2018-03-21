@@ -26,7 +26,7 @@ cs() {
                     #   cd ASSIGNMENT_FOLDER
                     #   ls;;
                     3231) 
-                        cd Warm_Up_Ass-3231-18s1
+                        cd Synchronisation-3231-18s1
                         ls;;
                     *) echo "Assignment NOT specified for class COMP$1";;
                 esac
