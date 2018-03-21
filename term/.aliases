@@ -20,7 +20,6 @@ LB_RED='\033[1;91m'
 #ALIASES
 # Using the better python
 alias bp=bpython
-alias python=python3
 alias py=python3    
 
 # Specific locations
