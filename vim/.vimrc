@@ -12,7 +12,7 @@ set backspace=2 " make backspace work like most other programs
 
 "Colors"
 set t_Co=256            " Goes before colorscheme
-colorscheme default
+colorscheme delek
 syntax enable           " enables syntax highlighting
 
 
@@ -33,6 +33,8 @@ set showcmd             " display incomplete commands
 set cursorline          " highlights the cursor line
 "set cursorcolumn        " highlights the cursor column
 "set colorcolumn =80     " colours the 80th column
+set undodir=~/.vim/undo-dir
+set undofile
 
 " displays whitespace as characters
 " set list listchars=tab:│\ ,trail:·,nbsp:⎵
