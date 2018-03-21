@@ -33,6 +33,8 @@ set showcmd             " display incomplete commands
 set cursorline          " highlights the cursor line
 "set cursorcolumn        " highlights the cursor column
 "set colorcolumn =80     " colours the 80th column
+set undodir=~/.vim/undo-dir
+set undofile
 
 " displays whitespace as characters
 " set list listchars=tab:│\ ,trail:·,nbsp:⎵

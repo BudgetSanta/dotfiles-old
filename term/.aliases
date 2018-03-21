@@ -41,6 +41,6 @@ alias nvm="git reset HEAD"
 #Other
 alias fucking="sudo"
 alias yo="ping 8.8.8.8"
-alias journal="cd ~/timeline"
+alias journal="cd ~/.timeline"
 alias ,="ssh"
 alias roh="telnet mud.rohonline.net 3333"
