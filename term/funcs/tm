@@ -1,0 +1,13 @@
+#!/bin/bash
+
+tm() {
+
+    if [[ $# -eq 0 ]]; then
+        tmux
+    elif [[ $# -eq 1 ]]; then
+        host=$(hostname)
+        cs $1 1> /dev/null && tmux new-session -s $1_$host
+    else
+        echo "USAGE: tmux [CLASS_CODE]"
+    fi
+}
