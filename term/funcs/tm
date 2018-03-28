@@ -7,7 +7,9 @@ tm() {
     if [[ $# -eq 0 ]]; then
         tmux new-session -s $host
     elif [[ $# -eq 1 ]]; then
-        if [[ $(tmux ls 2> /dev/null | grep "$1_$host" | wc -l) -eq 0 ]]; then
+        if [[ $1 == "ls" ]]; then
+            tmux ls
+        elif [[ $(tmux ls 2> /dev/null | grep "$1_$host" | wc -l) -eq 0 ]]; then
             cs $1 1> /dev/null && tmux new-session -s $1_$host
         else
             tmux attach -t $1_$host
