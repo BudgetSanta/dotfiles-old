@@ -18,6 +18,9 @@ cs() {
             # If week given 
             if [ -d week"$2"/lab ]; then    # CDs INTO WEEK
                 cd week"$2"/lab/
+                if [ -d src ]; then
+                    cd src                  # For Java projects
+                fi
                 ls
             # If ass give
             elif [ "$2" = "ass" ]; then    # CDs INTO ASSIGNMENT

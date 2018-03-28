@@ -9,12 +9,12 @@ Host cse
 
 Host aws_root
     User ubuntu
-    HostName ec2-52-63-118-18.ap-southeast-2.compute.amazonaws.com
+    HostName skylight.fun 
     IdentityFile ~/.ssh/awsPEM.pem
     Compression yes
 
 Host aws
     User jared
-    HostName ec2-52-63-118-18.ap-southeast-2.compute.amazonaws.com
+    HostName skylight.fun
     IdentityFile ~/.ssh/awsPEM.pem
     Compression yes

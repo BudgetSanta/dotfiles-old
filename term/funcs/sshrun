@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sshrun() {
+    # TODO: concatenate all commands into a string to send
+    if [ $# -lt 2 ]; then
+        echo "Usage: sshrun SERVER COMMAND(s)"
+    else
+        RESULTS=$(ssh $1 $2)
+        echo "EXIT CODE: $?"
+        echo "${RESULTS}"
+    fi
+}
