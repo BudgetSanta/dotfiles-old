@@ -5,7 +5,7 @@ tm() {
     host=$(hostname | cut -d . -f 1 | tr '[:lower:]' '[:upper:]')
 
     if [[ $# -eq 0 ]]; then
-        if [[ $(tmux ls 2> /dev/null | grep "$host" | wc -l) ]]; then
+        if [[ $(tmux ls 2> /dev/null | grep "$host" | wc -l) -ge 1 ]]; then
             tmux attach -t $host
         else
             tmux new-session -s $host
