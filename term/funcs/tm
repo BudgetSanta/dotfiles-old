@@ -5,16 +5,25 @@ tm() {
     host=$(hostname | cut -d . -f 1 | tr '[:lower:]' '[:upper:]')
 
     if [[ $# -eq 0 ]]; then
-        tmux new-session -s $host
+        if [[ $(tmux ls 2> /dev/null | grep "$host" | wc -l) ]]; then
+            tmux attach -t $host
+        else
+            tmux new-session -s $host
+        fi
     elif [[ $# -eq 1 ]]; then
+        alreadySession=$(tmux ls 2> /dev/null | grep "$1" | wc -l)
         if [[ $1 == "ls" ]]; then
             tmux ls
-        elif [[ $(tmux ls 2> /dev/null | grep "$1_$host" | wc -l) -eq 0 ]]; then
-            cs $1 1> /dev/null && tmux new-session -s $1_$host
+        elif [[ $alreadySession -eq 1 ]]; then
+            tmux attach -t $1
         else
-            tmux attach -t $1_$host
+            if [[ $(cs 2> /dev/null | grep "$1" | wc -l) -ge 1 ]]; then
+                cs $1 1> /dev/null && tmux new-session -s $1_$host
+            else
+                tmux new-session -s $1_$host
+            fi
         fi
     else
-        echo "USAGE: tmux [CLASS_CODE]"
+        echo "USAGE: tmux [NAME/CLASS_CODE]"
     fi
 }
