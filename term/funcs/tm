@@ -10,20 +10,29 @@ tm() {
         else
             tmux new-session -s $host
         fi
-    elif [[ $# -eq 1 ]]; then
-        alreadySession=$(tmux ls 2> /dev/null | grep "$1" | wc -l)
+    elif [[ $# -ge 1 ]]; then
+        alreadysession=$(tmux ls 2> /dev/null | grep "$1" | wc -l)
         if [[ $1 == "ls" ]]; then
             tmux ls
         elif [[ $alreadySession -eq 1 ]]; then
             tmux attach -t $1
-        else
+        fi
+
+        if [[ $# -eq 1 ]]; then
             if [[ $(cs 2> /dev/null | grep "$1" | wc -l) -ge 1 ]]; then
                 cs $1 1> /dev/null && tmux new-session -s $1_$host
             else
                 tmux new-session -s $1_$host
             fi
+
+        elif [[ $# -eq 2 ]]; then
+            if [[ $(cs 2> /dev/null | grep "$1" | wc -l) -ge 1 ]]; then
+                cs $1 $2 1> /dev/null && tmux new-session -s $1_$host
+            else
+                tmux new-session -s $1_$host
+            fi
+        else
+            echo "USAGE: tmux [NAME/CLASS_CODE] [WEEK/ASS]" 
         fi
-    else
-        echo "USAGE: tmux [NAME/CLASS_CODE]"
     fi
 }
