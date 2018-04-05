@@ -14,7 +14,7 @@ tm() {
         alreadysession=$(tmux ls 2> /dev/null | grep "$1" | wc -l)
         if [[ $1 == "ls" ]]; then
             tmux ls
-        elif [[ $alreadySession -eq 1 ]]; then
+        elif [[ $alreadysession -eq 1 ]]; then
             tmux attach -t $1
 
         elif [[ $# -eq 1 ]]; then
