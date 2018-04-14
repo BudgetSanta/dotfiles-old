@@ -1,6 +1,6 @@
 #! /bin/bash 
 
-# Usage
+# For use on CSE lab computers to add friends by username
 addFriend() {
     if [ "$#" -lt "2" ]; then
         echo "USAGE: addFriend \"username\" \"friendly name\""

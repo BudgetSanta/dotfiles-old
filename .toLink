@@ -1,0 +1,7 @@
+term .bash_profile 
+zsh .zshrc 
+tmux .tmux.conf 
+vim .vimrc 
+term .aliases 
+term .funcs 
+ssh config .ssh 

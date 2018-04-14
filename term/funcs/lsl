@@ -1,21 +1,24 @@
+#!/bin/bash
+
 #TODO Update LSP to be variable based on files
 #   based on if .py/.c/else show certain files
 lsl () {
 
-    #TODO Get calls to lsl_file happening from a hash table
+    #TODO: Read in list of files and names from .types file
+    #TODO: Ask to add more if not present
     
     # NOTE: Add under heading in [lsl_file FILE_TYPE "READABLE_NAME"
 
     printf "\n"
     # Text Files
-    lsl_file txt "TEXT FILES"
-    lsl_file csv "CSV FILES"
-    lsl_file md "MARKDOWN FILES"
-    lsl_file db "DATABASE FILES"
-    lsl_file log "LOG FILES"
+    lsl_file txt "TXT: TEXT FILES"
+    lsl_file csv "CSV: CSV FILES"
+    lsl_file md "MD: MARKDOWN FILES"
+    lsl_file db "DB: DATABASE FILES"
+    lsl_file log "LOG: LOG FILES"
     
     # Web Files
-    lsl_file html "HTML FILES"
+    lsl_file html "HTML: HTML FILES"
 
     # Python
     lsl_file py "PY: PYTHON FILES"
@@ -24,6 +27,9 @@ lsl () {
     lsl_file h "C: HEADER FILES"
     lsl_file o "C: OUTPUT FILES"
     lsl_file c "C: C FILES"
+
+    # Prolog Files
+    lsl_file pl "PL: PROLOG FILES"
 
     # Assembly Files
     lsl_file s "ASSEMBLY FILES"

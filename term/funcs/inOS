@@ -1,5 +1,10 @@
 #!/bin/bash
 
 inOS() {
-    echo $PATH | grep "3231" | wc -l
+    in=$(echo $PATH | grep "3231" | wc -l)
+    if [[ "$in" == "1" ]]; then
+        echo "You're in a 3231 subshell"
+    else
+        echo "You're NOT in a 3231 subshell"
+    fi
 }

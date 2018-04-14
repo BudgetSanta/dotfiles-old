@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# Change Dir and list file
+cdl() {
+    cd "$1"
+    ls
+}
+
+# Make dir and change to it
+mkcd() {
+    mkdir -p "$1"
+    cd "$1"
+}
+#!/bin/bash
+
+:q() {
+    exit
+}
+
+#TODO: Make work
+#TODO: Make some tests as well
+alias destroy='/bin/rm'
+rmSAFE() {  # FIX
+    if [[ $# -eq 0 ]] || [[ $1 == -* ]]; then
+        echo "safe_rm usage: rm FILES (No Args!)"
+    else
+        #Add a little loop for 'rm file1 file2 file3'
+        mkdir -p ~/.trash/
+        if [[ "$1" == "." ]]; then
+            num=$(mv -v * ~/.trash | wc -l)
+        elif [[ "$1" == "*" ]]; then
+            num=$(yes | mv -v * ~/.trash | wc -l)
+        else
+            num=$(mv -v $1 ~/.trash/ | wc -l)
+        fi
+        echo "$num File(s) moved to ~/.trash"
+        echo "Use 'destroy' to actually delete"
+        echo "Use 'emptytrash' to empty trash files"
+    fi
+}
+
+#TODO: Make safe_rm work then get this working
+emptytrash() {
+    echo -n "Really empty Trash? DESTRUCTIVE [y/N] " && read answer
+    if [[ $answer == y* ]] || [[ $answer == Y* ]] ; then
+        destroy -rf ~/.trash/* && echo "Emptied Trash!"
+    else 
+        echo "Not emptying trash"
+    fi
+}
+
+# Searches recursively for search term from .
+# Usage: psearch "TERM"
+psearch() {
+    result=${PWD##*/}                           # to assign to a variable
+    echo "Searching ${result} for \"$1\"...."
+    lines=$(grep -rn "$1" .)
+    if [[ ${lines} -eq 0 ]]; then
+        echo "No occurrences found."
+    else
+        echo "Found ${lines} occurrences."
+    fi
+}
+
+# Searches recursively for file from .
+# Usage pfind file.extension
+pfind() {
+    directory=${PWD##*/}
+    echo "Searching ${directory} for \"$1\"...."
+    find . -name $1
+}
+
+#print a 256 different colours and their codes because
+print256() {
+    for i in {0..255}; do
+
+        # Alignment
+        if (( $i <= 9 )); then
+            printf "  "
+        elif (( $i >= 10 && $i <= 99 )); then
+            printf " "
+        fi
+
+        # Colour
+        printf "\x1b[38;5;${i}mcolour${i}\x1b[0m "
+        
+        # Every 8, newline
+        if ! (( ($i+1) % 8 || $i == 0)); then
+            printf "\n"
+        fi
+    done
+}
