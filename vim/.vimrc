@@ -12,7 +12,7 @@ set backspace=2 " make backspace work like most other programs
 
 "Colors"
 set t_Co=256            " Goes before colorscheme
-colorscheme delek
+colorscheme desert
 syntax enable           " enables syntax highlighting
 
 

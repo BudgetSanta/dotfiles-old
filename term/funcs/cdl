@@ -1,5 +1,0 @@
-# Change Dir and list file
-cdl() {
-    cd "$1"
-    ls
-}

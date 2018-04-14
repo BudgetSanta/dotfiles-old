@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Push currect branch to all available remotes
+gpushall() {
+    for REMOTE in `git remote`; do
+        REPO=$(basename `git rev-parse --show-toplevel`)
+        BRANCH=$(git branch | grep \* | cut -d ' ' -f2-)
+        echo "${REPO}[{$BRANCH}] --> ${REMOTE}"
+        git push ${REMOTE}
+    done
+}
+
+# Git Info
+function parse_git_dirty_me {
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo -e "${LB_RED} * "
+}
+
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ [\1]$(parse_git_dirty_me)/"
+}

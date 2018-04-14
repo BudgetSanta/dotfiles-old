@@ -36,10 +36,11 @@ alias gd="git diff"
 alias grm="git rm"
 alias glog="git log --graph --oneline --decorate --all"
 alias huh="git status -sb"
-alias greset="git checkout HEAD -- "
+alias greset="git checkout HEAD --"
 
 #Other
 alias fucking="sudo"
 alias yo="ping 8.8.8.8"
 alias journal="cd ~/.timeline"
 alias ,="ssh"
+alias sfuncs="source $HOME/.funcs"

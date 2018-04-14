@@ -1,59 +1,63 @@
 #!/bin/bash
 
-# Comp class directory
+# Navigates my comp directory tree
+# compNNNN-YYsS
+    # weekXX
+        # lab
+            # ...
+    # ASSIGNMENT-NNNN-YYsS   (each assignment is submodule)
 # Usage: cs CLASS_CODE [WEEK]
 cs() {
 
     SEM="18s1"
-    # Just goes to root of gits
-    if [ "$#" -eq "0" ]; then
+    if [ "$#" -eq "0" ]; then                       # No args mean root of classes
         cd ~/git/
         ls
-    elif [ -d ~/git/comp"$1_${SEM}" ]; then
+    elif [ -d ~/git/comp"$1_${SEM}" ]; then         # Class given
         cd ~/git/comp"$1_${SEM}"/
             
-        # If week/ass given
-        if [ "$#" -eq "2" ]; then
+        if [ "$#" -eq "2" ]; then                   # Week or Assignment specified
 
-            # If week given 
-            if [ -d week"$2"/lab ]; then    # CDs INTO WEEK
+            if [ -d week"$2"/lab ]; then            # - Week specified
                 cd week"$2"/lab/
                 if [ -d src ]; then
-                    cd src                  # For Java projects
+                    cd src                          # -- For Java projects
                 fi
                 ls
-            # If ass give
-            elif [ "$2" = "ass" ]; then    # CDs INTO ASSIGNMENT
+
+            elif [ "$2" = "ass" ]; then             # - Assignment specified
                 case "$1" in
                     #CLASS_CODE)
                     #   cd ASSIGNMENT_FOLDER
                     #   ls;;
                     3231) 
-                        cd Synchronisation-3231-18s1
+                        cd Sys_Call_And_Processes-3231-18s1
                         ls;;
                     2511)
                         cd Cinema_Booking_System-3231-18s1
                         ls;;
+                    3411)
+                        cd Prolog_Ass1-3411-18s1
+                        ls;;
                     *) echo "Assignment NOT specified for class COMP$1";;
                 esac
 
-            else                            # Week not found
-                printf "Week \"$2\" doesn't exist.\n"
-                printf "Create 'week$2' folder? [y/N] " && read answer
+            else                                    # Week or assignment not found 
+                echo "\"$2\" doesn't exist in comp$1_${SEM}."
+                echo -n "Create 'week$2' folder? [y/N] " && read answer
                 if [[ $answer == y* ]] || [[ $answer == Y* ]] ; then
                     mkcd "week$2/lab"
                 fi
             fi
 
-        # No week/ass given
-        else
+        else                                        # No Week or assignment specified
             ls
         fi
-    else # Doesn't exist
+    else                                            # Class not found
         printf "Class \"$1\" doesn't exist.\n"
     fi
 }
 
 classes() {
-    cd ~/git && cat classes
+    cd ~/git && ls -1d comp*
 }
