@@ -62,6 +62,14 @@ psearch() {
     fi
 }
 
+# Searches recursively for file from .
+# Usage pfind file.extension
+pfind() {
+    directory=${PWD##*/}
+    echo "Searching ${directory} for \"$1\"...."
+    find . -name $1
+}
+
 #print a 256 different colours and their codes because
 print256() {
     for i in {0..255}; do
