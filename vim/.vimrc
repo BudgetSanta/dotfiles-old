@@ -1,4 +1,4 @@
-" disables arrow keys 
+" disablet arrow keys 
 noremap <UP>    <NOP> 
 noremap <DOWN>  <NOP>
 noremap <LEFT>  <NOP>
@@ -32,7 +32,7 @@ set showmatch           " highlights matching brackets
 set showcmd             " display incomplete commands
 set cursorline          " highlights the cursor line
 "set cursorcolumn        " highlights the cursor column
-"set colorcolumn =80     " colours the 80th column
+set colorcolumn =80     " colours the 80th column
 set undodir=~/.vim/undo-dir
 set undofile
 
@@ -67,6 +67,3 @@ execute pathogen#infect()
 
 " AIRLINE
 let g:airline_theme='deus'
-
-
-
