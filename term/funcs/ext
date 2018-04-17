@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Usage: ext SOURCE_FILE START END DEST_FILE
+ext() {
+
+    # TODO: Check if SOURCE_FILE exists
+    # TODO: Check if DEST_FILE Exists
+    # if not, create
+
+    WC=$(wc -l < $1 | tr -d ' ')
+    START="$2"
+    END="$3"
+
+    if [[ ${START} -gt ${END} ]]; then
+        echo "END_LINE less than START_LINE"
+    else
+        TOP_LINE=$((END - START + 1))
+        BOT_LINE=$((WC - START + 1))
+
+        if [[ $# -eq 3 ]]; then
+            cat $1 | tail -${BOT_LINE} | head -${TOP_LINE}
+        elif [[ $# -eq 4 ]]; then
+            cat $1 | tail -${BOT_LINE} | head -${TOP_LINE} > $4
+        else
+            echo "Usage: ext SOURCE_FILE START_LINE END_LINE [DEST_FILE]"
+        fi
+    fi
+
+
+}
