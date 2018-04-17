@@ -1,9 +1,0 @@
-#!/bin/bash
-
-psearch() {
-
-    result=${PWD##*/}               # to assign to a variable
-    echo "Searching ${result} for \"$1\"...." # to print to stdout
-    grep -rn "$1" .
-
-}
