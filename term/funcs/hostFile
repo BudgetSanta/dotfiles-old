@@ -1,0 +1,15 @@
+#!/bin/bash
+
+hostFile() {
+    if [[ $# -eq 1 ]]; then
+        scp $1 jared@skylight.fun:~/skylight/app/static
+        echo "File available at:"
+        echo "http://skylight.fun/f/$1"
+    elif [[ $# -eq 2 ]]; then
+        scp $1 jared@skylight.fun:~/skylight/app/static/$2
+        echo "File available at:"
+        echo "http://skylight.fun/f/$2"
+    else
+        echo "USAGE: hostFile filename [rename]"
+    fi
+}
