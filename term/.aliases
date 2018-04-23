@@ -43,4 +43,5 @@ alias fucking="sudo"
 alias yo="ping 8.8.8.8"
 alias journal="cd ~/.timeline"
 alias ,="ssh"
-alias sfuncs="source $HOME/.funcs"
+alias sfuncs="source $HOME/.funcs"      # Source all functions
+alias yrmd="yes | rm -r"                # Delete directory and yes it all
