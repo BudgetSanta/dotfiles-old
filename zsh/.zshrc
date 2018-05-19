@@ -51,9 +51,11 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(zsh-autosuggestions)
-plugins=(jira)
+plugins=(
+    git
+    zsh-autosuggestions
+    jira
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,3 +102,5 @@ export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 
 umask 007
+
+export TERM=xterm-256color
