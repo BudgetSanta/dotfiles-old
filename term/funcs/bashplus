@@ -50,21 +50,16 @@ emptytrash() {
 }
 
 # Searches recursively for search term from .
-# Usage: psearch "TERM"
-psearch() {
+# Usage: ptext "TERM"
+ptext() {
     result=${PWD##*/}                           # to assign to a variable
     echo "Searching ${result} for \"$1\"...."
-    grep -rn "$1" . | less
-    #if [[ ${lines} -eq 0 ]]; then
-    #    echo "No occurrences found."
-    #else
-    #    echo "Found ${lines} occurrences."
-    #fi
+    grep -rn "$1" .
 }
 
 # Searches recursively for file from .
-# Usage pfind file.extension
-pfind() {
+# Usage pfile file.extension
+pfile() {
     directory=${PWD##*/}
     echo "Searching ${directory} for \"$1\"...."
     find . -name $1

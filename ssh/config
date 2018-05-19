@@ -18,3 +18,8 @@ Host aws
     HostName skylight.fun
     IdentityFile ~/.ssh/awsPEM.pem
     Compression yes
+
+Host gc
+    User jared
+    Hostname mc.skylight.fun
+    IdentityFile ~/.ssh/gc_id_rsa

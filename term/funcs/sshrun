@@ -1,5 +1,14 @@
 #!/bin/bash
 
+sls() {
+    if [[ $# -ge 1 ]]; then
+        RESULTS=$(ssh $1 ls)
+        echo "${RESULTS}"
+    else
+        echo "Usage: sls USER@SERVER [\"commands to run\"]"
+    fi
+}
+
 sshrun() {
     # TODO: concatenate all commands into a string to send
     if [ $# -lt 2 ]; then
