@@ -1,3 +1,4 @@
+# TEST COMMENT
 term .bash_profile 
 zsh .zshrc 
 tmux .tmux.conf 
