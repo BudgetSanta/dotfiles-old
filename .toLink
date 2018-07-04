@@ -5,3 +5,5 @@ vim .vimrc
 term .aliases 
 term .funcs 
 ssh config .ssh 
+term/chunkwm .chunkwm
+term/chunkwm .skhdrc
