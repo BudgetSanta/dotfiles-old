@@ -52,8 +52,8 @@ DISABLE_AUTO_TITLE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    jira
     zsh-autosuggestions
+    jira
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,3 +101,5 @@ export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 
 umask 007
+
+export TERM=xterm-256color
