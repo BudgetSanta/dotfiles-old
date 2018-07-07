@@ -38,3 +38,14 @@ shift + alt - 3 : chunkc tiling::window --send-to-desktop 3
 shift + alt - 4 : chunkc tiling::window --send-to-desktop 4
 shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
 shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
+
+# ========== Resizing Windows ==================
+
+# resize windows
+lctrl + alt - h : "${HOME}"/.config/chunkwm/scripts/window/resize.sh left
+lctrl + alt - j : "${HOME}"/.config/chunkwm/scripts/window/resize.sh down
+lctrl + alt - k : "${HOME}"/.config/chunkwm/scripts/window/resize.sh up
+lctrl + alt - l : "${HOME}"/.config/chunkwm/scripts/window/resize.sh right
+
+# equalize size of windows
+lctrl + alt - 0 : chunkc tiling::desktop --equalize
