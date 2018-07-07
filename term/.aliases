@@ -47,3 +47,4 @@ alias sfuncs="source $HOME/.funcs"      # Source all functions
 alias yrmd="yes | rm -r"                # Delete directory and yes it all
 alias okta="cd ~/bit-bucket/okta-scripts/ && ./okta.sh"
 alias bb="cd ~/bit-bucket"
+alias restartwm="brew services restart skhd && brew services restart chunkwm"
