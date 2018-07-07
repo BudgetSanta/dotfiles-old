@@ -45,3 +45,4 @@ alias journal="cd ~/.timeline"
 alias ,="ssh"
 alias sfuncs="source $HOME/.funcs"      # Source all functions
 alias yrmd="yes | rm -r"                # Delete directory and yes it all
+alias restartwm="brew services restart skhd && brew services restart chunkwm"
