@@ -31,7 +31,7 @@ cs() {
                     #   cd ASSIGNMENT_FOLDER
                     #   ls;;
                     3231) 
-                        cd Sys_Call_And_Processes-$1-$SEM
+                        cd Virutal_Memory-$1-$SEM
                         ls;;
                     2511)
                         cd Shipment_Planner-$1-$SEM

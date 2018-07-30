@@ -65,6 +65,14 @@ pfile() {
     find . -name $1
 }
 
+# Searches recursively for the directory from .
+# Usage pdir DIRNAME
+pdir() {
+    currDir=${PWD##*/}
+    echo "Searching ${currDir} for \"$1\"...."
+    find . -type d | grep $1
+}
+
 #print a 256 different colours and their codes because
 print256() {
     for i in {0..255}; do
