@@ -9,7 +9,7 @@
 # Usage: cs CLASS_CODE [WEEK]
 cs() {
 
-    SEM="18s1"
+    SEM="18s2"
     if [ "$#" -eq "0" ]; then                       # No args mean root of classes
         cd ~/git/
         ls
