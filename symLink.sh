@@ -29,5 +29,7 @@ linkFile() {
 }
 
 while read LINE; do
-    linkFile $LINE
+    if [[ $LINE != "#"* ]]; then 
+        linkFile $LINE
+    fi
 done < .toLink
