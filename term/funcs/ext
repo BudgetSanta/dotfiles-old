@@ -3,28 +3,35 @@
 # Usage: ext SOURCE_FILE START END DEST_FILE
 ext() {
 
-    # TODO: Check if SOURCE_FILE exists
-    # TODO: Check if DEST_FILE Exists
-    # if not, create
+    # File Existance check
+    if ! [[ -f $1 ]]; then
+        >&2 echo "Error: File \"$1\" not found!"
+        return 1
 
-    WC=$(wc -l < $1 | tr -d ' ')
-    START="$2"
-    END="$3"
+    # Arg Check
+    elif [[ $# -eq 1 ]]; then
+        >&2 echo "Usage: $0 source_file start_line [end_line]"
+        return 1
 
-    if [[ ${START} -gt ${END} ]]; then
-        echo "END_LINE less than START_LINE"
+    # Single line extraction
+    elif [[ $# -eq 2 ]]; then
+        head -$2 $1 | tail -1
+        return 
+
+    # Section boundaries check
+    elif [[ $2 -gt $3 ]]; then
+        >&2 echo "Error: start_line greater than end_line"
+        return 1
+    
+    # Section extraction
     else
+        WC=$(wc -l < $1 | tr -d ' ')
+        START="$2"
+        END="$3"
+
         TOP_LINE=$((END - START + 1))
         BOT_LINE=$((WC - START + 1))
 
-        if [[ $# -eq 3 ]]; then
-            cat $1 | tail -${BOT_LINE} | head -${TOP_LINE}
-        elif [[ $# -eq 4 ]]; then
-            cat $1 | tail -${BOT_LINE} | head -${TOP_LINE} > $4
-        else
-            echo "Usage: ext SOURCE_FILE START_LINE END_LINE [DEST_FILE]"
-        fi
+        tail -${BOT_LINE} $1 | head -${TOP_LINE}
     fi
-
-
 }
