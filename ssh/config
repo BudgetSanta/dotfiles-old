@@ -13,10 +13,10 @@ Host cse
     Compression yes
     IdentityFile ~/.ssh/cse_rsa
 
-Host aws
-    User jared
+Host zoo 
+    User chief
     HostName skylight.fun
-    IdentityFile ~/.ssh/awsPEM.pem
+    IdentityFile ~/.ssh/zoo.pem
     Compression yes
 
 Host gc
