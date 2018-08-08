@@ -1,3 +1,8 @@
+Host *
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/github_rsa
+    IdentityFile ~/.ssh/cse_rsa
+
 Host cse
 	User z5153405
 	HostName wagner.cse.unsw.edu.au 
@@ -6,12 +11,7 @@ Host cse
     ForwardX11 yes
     XAuthLocation /opt/X11/bin/xauth
     Compression yes
-
-Host aws_root
-    User ubuntu
-    HostName skylight.fun 
-    IdentityFile ~/.ssh/awsPEM.pem
-    Compression yes
+    IdentityFile ~/.ssh/cse_rsa
 
 Host aws
     User jared
@@ -23,3 +23,4 @@ Host gc
     User jared
     Hostname mc.skylight.fun
     IdentityFile ~/.ssh/gc_id_rsa
+
