@@ -13,13 +13,14 @@ Host aws_root
     IdentityFile ~/.ssh/awsPEM.pem
     Compression yes
 
-Host aws
-    User jared
+Host zoo 
+    User chief
     HostName skylight.fun
-    IdentityFile ~/.ssh/awsPEM.pem
+    IdentityFile ~/.ssh/zoo.pem
     Compression yes
 
 Host gc
     User jared
     Hostname mc.skylight.fun
     IdentityFile ~/.ssh/gc_id_rsa
+
