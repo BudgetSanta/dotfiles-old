@@ -1,0 +1,11 @@
+#!/bin/bash
+
+jsonify() {
+    if [[ "$#" -ne 1 ]]; then
+        echo "USAGE: jsonify FILE" 1>&2
+        return 1
+    else
+        python -m json.tool "$1" > "tmp_$$"
+        cat "tmp_$$" > "$1" && rm "tmp_$$"
+    fi
+}

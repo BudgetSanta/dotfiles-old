@@ -1,4 +1,4 @@
-# TEST COMMENT
+# DOTFILES_FOLDER DOTFILES_FILE [DEST_FOLDER]
 term .bash_profile 
 zsh .zshrc 
 tmux .tmux.conf 

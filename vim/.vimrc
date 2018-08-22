@@ -31,7 +31,7 @@ set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlights matching brackets
 set showcmd             " display incomplete commands
 set cursorline          " highlights the cursor line
-"set cursorcolumn        " highlights the cursor column
+set cursorcolumn        " highlights the cursor column
 set colorcolumn =80     " colours the 80th column
 set undodir=~/.vim/undo-dir
 set undofile

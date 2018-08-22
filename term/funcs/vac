@@ -1,0 +1,7 @@
+#!/bin/sh
+
+vac() {
+    weeks=$( bc <<< $1/5 )
+    days=$( bc <<< $1%5 )
+    echo "$weeks week(s), $days day(s)"
+}

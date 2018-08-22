@@ -2,9 +2,10 @@ Host *
     AddKeysToAgent yes
     IdentityFile ~/.ssh/github_rsa
     IdentityFile ~/.ssh/cse_rsa
+    IdentityFile ~/.ssh/bitbucket_rsa
 
 Host cse
-	User z5153405
+    User z5153405
 	HostName wagner.cse.unsw.edu.au 
     ForwardX11Trusted yes
     ForwardAgent yes
