@@ -59,6 +59,6 @@ linkFile() {
 
 while read LINE; do
     if [[ $LINE != "#"* && $LINE != "^[ ]*$" ]]; then 
-        linkFile "$LINE"
+        linkFile $LINE
     fi
 done < .toLink
