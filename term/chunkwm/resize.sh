@@ -11,10 +11,10 @@ function resize
 function main
 {
     case "${1:0:1}" in
-        "l") resize "0.05" "west" "-0.05" "east" ;;
-        "r") resize "0.05" "east" "-0.05" "west" ;;
-        "d") resize "0.05" "south" "-0.05" "north" ;;
-        "u") resize "0.05" "north" "-0.05" "south" ;;
+        "l") resize "0.01" "west" "-0.01" "east" ;;
+        "r") resize "0.01" "east" "-0.01" "west" ;;
+        "d") resize "0.01" "south" "-0.01" "north" ;;
+        "u") resize "0.01" "north" "-0.01" "south" ;;
     esac
 }
 
