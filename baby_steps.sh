@@ -25,10 +25,13 @@ popd
 # Pathogen for Vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+# Vim Undo dir
+mkdir -p ~/.vim/undo-dir
 
 # Installing Brew for Mac
 # - Flimsy check if mac
 if -d /Applications; then
+    mkdir -p ~/Screenshots && defaults write com.apple.screencapture location ~/Screenshots
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
@@ -38,13 +41,16 @@ fi
 brew install python3
 
 # Installing Chunkwm
-brew tap crisidev/homebrew-chunkwm
-brew install --HEAD --with-tmp-logging chunkwm
-brew install --HEAD --with-logging  koekeishiya/formulae/skhd
+#brew tap crisidev/homebrew-chunkwm
+#brew install --HEAD --with-tmp-logging chunkwm
+#brew install --HEAD --with-logging  koekeishiya/formulae/skhd
 
-echo "STARTING CHUNK"
-brew services start chunkwm
-brew services start skhd
+#echo "STARTING CHUNK"
+#brew services start chunkwm
+#brew services start skhd
+
+
+
 
 # Downloading Oh My Zsh (Should be run LAST, opens zsh prompt halting everything else)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

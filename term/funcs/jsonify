@@ -5,7 +5,6 @@ jsonify() {
         echo "USAGE: jsonify FILE" 1>&2
         return 1
     else
-        python -m json.tool "$1" > "tmp_$$"
-        cat "tmp_$$" > "$1" && rm "tmp_$$"
+        python -m json.tool "$1"
     fi
 }

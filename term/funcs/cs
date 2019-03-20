@@ -30,14 +30,8 @@ cs() {
                     #CLASS_CODE)
                     #   cd ASSIGNMENT_FOLDER
                     #   ls;;
-                    3231) 
-                        cd Virutal_Memory-$1-$SEM
-                        ls;;
-                    2511)
-                        cd Shipment_Planner-$1-$SEM
-                        ls;;
-                    3411)
-                        cd Prolog_Ass1-$1-$SEM
+                    2041)
+                        cd Instacram-$1-$SEM
                         ls;;
                     *) echo "Assignment NOT specified for class COMP$1";;
                 esac
