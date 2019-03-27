@@ -1,8 +1,8 @@
 " disablet arrow keys 
-noremap <UP>    <NOP> 
+noremap <UP>    <NOP>
 noremap <DOWN>  <NOP>
 noremap <LEFT>  <NOP>
-noremap <RIGHT> <NOP> 
+noremap <RIGHT> <NOP>
 inoremap kj <ESC>
 
 " Colors"
@@ -24,15 +24,15 @@ set number              " enables linenumbers
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlights matching brackets
 set showcmd             " display incomplete commands
-set cursorline          " highlights the cursor line
-set cursorcolumn        " highlights the cursor column
-set colorcolumn =80     " colours the 80th column
+"set cursorline          " highlights the cursor line
+"set cursorcolumn        " highlights the cursor column
+"set colorcolumn =80     " colours the 80th column
 set undodir=~/.vim/undo-dir
 set undofile
 
 " Editor Settings
 "set nomodeline          " disabled for security reasons     
-set autochdir           " sets the working directory to the current file
+"set autochdir           " sets the working directory to the current file
 "set virtualedit =block  " allows blockwise selections
 "set textwidth   =79     " sets the textwidth formatting to 79 characters (PEP 8)
 set lazyredraw          " redraw only when needed
@@ -55,8 +55,5 @@ au FileType text,markdown setlocal formatoptions+=t "re-enables for text files
 "set tags=tags;/
 
 " Persistant Folds
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
-augroup END
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
