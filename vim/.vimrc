@@ -54,6 +54,10 @@ au FileType text,markdown setlocal formatoptions+=t "re-enables for text files
 " CTags
 "set tags=tags;/
 
+" Helps with Vim-GitGutter
+set updatetime=100
+
 " Persistant Folds
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
+execute pathogen#infect()
